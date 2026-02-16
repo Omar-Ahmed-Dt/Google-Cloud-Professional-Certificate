@@ -107,20 +107,6 @@ In GKE **Autopilot:**
 2. Create custom node pools
 3. Delete default-pool
 
-
-- Cluster: Group of Compute Engine instances:
-    - Master Node(s) - Manages the cluster
-    - Worker Node(s) - Run your workloads (pods)
-
-- Master Node (Control plane) components:
-    - API Server - Handles all communication for a K8S cluster (from nodes and outside)
-    - Scheduler - Decides placement of pods
-    - Control Manager - Manages deployments & replicasets
-    - etcd - Distributed database storing the cluster state
-
-- Worker Node components:
-    - Runs your pods
-
 ---
 
 ## Kubernetes Components 
