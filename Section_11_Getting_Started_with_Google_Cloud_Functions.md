@@ -51,3 +51,39 @@ tags:
     - Stackdriver Logging
 
 ---
+
+## Cloud Functions – Second Generation – What's New?
+- **2 Product Versions:**
+    - Cloud Functions (1st gen): First version
+    - Cloud Functions (2nd gen): New version built on top of Cloud Run and Eventarc
+
+- **Recommended:** Use Cloud Functions (2nd gen)
+- **Key Enhancements in 2nd gen:**
+    - **Longer Request Timeout:** Up to 60 minutes for HTTP-triggered functions
+    - **Larger Instance Sizes:** Up to 16 GiB RAM with 4 vCPU  
+      (v1: Up to 8 GB RAM with 2 vCPU)
+    - **Concurrency:** Up to 1000 concurrent requests per function instance  
+      (v1: 1 concurrent request per function instance)
+    - **Multiple Function Revisions and Traffic Splitting supported**  
+      (v1: NOT supported)
+
+---
+
+## Cloud Functions – Scaling and Concurrency
+
+- **Typical serverless functions architecture:**
+    - **Autoscaling** – As new invocations come in, new function instances are created
+    - **One function instance handles ONLY ONE request at a time:** ==3 concurrent function invocations ⇒ 3 function instances==
+        - If a 4th invocation occurs while others are in progress, a new function instance is created
+        - HOWEVER, a function instance that completed execution may be reused for future requests
+    - **(Typical Problem) Cold Start:**
+        - New function instance initialization from scratch can take time
+        - (Solution) Configure minimum number of instances (increases cost)
+
+- **1st Gen** uses the typical serverless functions architecture
+- **2nd Gen** adds a very important new feature:
+    - ==One function instance can handle multiple requests AT THE SAME TIME==
+        - **Concurrency:** ==How many concurrent invocations can one function instance handle? (Max 1000)==
+        - (IMPORTANT) Your function code should be safe to execute concurrently
+
+---
