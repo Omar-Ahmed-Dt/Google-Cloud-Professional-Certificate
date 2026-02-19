@@ -432,11 +432,19 @@ Filestore Instance (Managed NFS Server)
 ```
 
 ### Service tiers
+**Why Filestore Has Tiers**: Not all workloads need the same:
+- Performance (IOPS / throughput)
+- Availability
+- Replication
+- Cost
+
+So Google created tiers optimized for different scenarios - Cheap → Fast → Highly Available → Enterprise-grade
+
 Filestore offers multiple service tiers that vary in capacity, performance, and features. Each service tier is tailored for specific use cases:
-- Basic tier: File sharing, software development, web hosting, basic AI.
-- Zonal tier: HPC, batch compute, EDA, media rendering and transcoding, advanced AI, large data sets.
-- Regional tier: Mission-critical workloads requiring high availability.
-- Enterprise tier: Mission-critical workloads requiring high availability.
+- Basic tier: Entry-level Filestore designed for general-purpose file sharing.
+- Zonal tier: High-performance storage within **one zone** - Designed for heavy compute workloads needing high throughput.
+- Regional tier: High-availability Filestore - Data is replicated across **multiple zones in a region.**
+- Enterprise tier: Highest level Filestore offering for enterprise-grade workloads - Extreme reliability, Advanced performance, Large-scale enterprise systems
 
 ---
 ## Storage - Scenarios
