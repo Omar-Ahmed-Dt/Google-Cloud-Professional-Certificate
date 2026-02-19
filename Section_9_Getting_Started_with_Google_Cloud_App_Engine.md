@@ -3,9 +3,7 @@ tags:
   - gcp
 ---
 # App Engine
-- Simplest way to deploy and scale your applications in GCP
-	- Provides end-to-end application management
-	
+- App Engine is one of the fully managed, serverless platforms for **developing and hosting web applications at scale.** You can choose from several popular languages to develop your apps, and then let App Engine take care of **provisioning servers and scaling your app instances based on demand.** A newer and better **alternative to App Engine is Cloud Run**, which is the latest evolution of Google Cloud Serverless. If you are a new Google Cloud users, we recommend using Cloud Run for developing and hosting web applications.
 - Supports:
 	- Go, Java, .NET, Node.js, PHP, Python, Ruby using pre-configured runtimes
 	- Custom runtime (write code in any language)
@@ -17,20 +15,6 @@ tags:
 	- Managed platform updates & application health monitoring
 	- Application versioning - Roll back to specific versions
 	- Traffic splitting
-
-## Compute Engine vs App Engine
-
-| Feature                | Compute Engine                                       | App Engine             |
-| ---------------------- | ---------------------------------------------------- | ---------------------- |
-| Service Model          | IaaS                                                 | PaaS (Serverless)      |
-| Flexibility            | More flexibility                                     | Lower flexibility      |
-| Responsibility         | More responsibility                                  | Lesser responsibility  |
-| Infrastructure Control | Full control over VM                                 | No server management   |
-| OS Management          | You choose & manage OS image                         | Managed by Google      |
-| Software Installation  | You install & configure                              | Managed runtime        |
-| Hardware Choice        | You choose machine type                              | Abstracted             |
-| Access & Security      | Fine-grained control (firewalls, certificates, etc.) | Mostly managed         |
-| Availability           | You configure HA & scaling                           | Automatic scaling & HA |
 
 ## App Engine Environments
 - **Standard**: Applications run in language-specific **sandboxes**

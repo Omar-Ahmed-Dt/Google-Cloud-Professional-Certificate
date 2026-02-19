@@ -3,24 +3,24 @@ tags:
   - gcp
 ---
 # Cloud Run - Serverless
-- Cloud Run is a fully managed serverless platform that lets you run containerized applications.
+- Cloud Run is a fully managed application platform for running your code, function, or container on top of Google's highly scalable infrastructure.
+- You can deploy code written in any programming language on Cloud Run **if you can build a container image from it. In fact, building container images is optional. If you're using Go, Node.js, Python, Java, .NET, Ruby, or a supported framework you can use the source-based deployment option** that builds the container for you, using the best practices for the language you're using.
 - You give it a container image. Google runs it, scales it, and exposes it over HTTPS.
 - You don’t manage: Servers, VMs, Kubernetes, Load balancers, Autoscaling, `You just provide a container`.
 - Request-Driven: The service stays idle (at zero cost) until a request hits its URL. Google then instantly starts your container to handle the traffic.
 - Built-in Load Balancing: Every service gets a stable HTTPS URL automatically.
 - **Cloud Run** – Container to Production in Seconds
-    - Built on top of an open standard – **Knative**
     - Fully managed serverless platform for containerized applications
         - ZERO infrastructure management
         - Pay-per-use (CPU, Memory, Requests, Networking)
 
-- Fully integrated end-to-end developer experience:
-    - No limitations in languages, binaries, and dependencies
-    - Easily portable because of container-based architecture
-    - Integrations with Cloud Code, Cloud Build, Cloud Monitoring, and Cloud Logging
+## Cloud Run types
 
-- **Anthos** – Run Kubernetes clusters anywhere: Cloud, Multi-cloud, On-premise - Anthos = Kubernetes anywhere (but managed by Google)
-- **Cloud Run for Anthos** Deploy your workloads to Anthos clusters, Run on-premises or on Google Cloud
+| Resource    | Description                                                                                                                                                                        |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Service     | Responds to HTTP requests sent to a unique and stable endpoint, using stateless instances that autoscale based on a variety of key metrics. Also responds to events and functions. |
+| Job         | Executes parallelizable tasks that are executed manually, or on a schedule, and run to completion.                                                                                 |
+| Worker pool | Handles always-on **background workloads** such as pull-based workloads, for example, Kafka consumers, Pub/Sub pull queues, or RabbitMQ consumers.                                 |
 
 ## 🏗 How Cloud Run Works Conceptually
 0. You build your application inside a container.
@@ -30,7 +30,7 @@ tags:
 4. That service gets a public HTTPS endpoint.
 5. When requests arrive: Cloud Run starts containers (if needed), Handles traffic, Scales automatically
 6. When traffic stops:
-7. It scales down (even to zero)
+	- It scales down (even to zero)
 
 ## Cloud Run – From the Command Line
 
