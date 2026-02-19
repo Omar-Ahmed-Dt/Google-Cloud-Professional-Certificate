@@ -5,9 +5,9 @@ tags:
 
 # GCP Reference Index
 
-> [!info] About
-> This directory contains Google Cloud Platform study materials and notes for the Professional Cloud Architect certification.
-> **Source**: [GCP Tutorials](https://www.in28minutes.com/gcp-bookshelf)
+> About
+> - This directory contains Google Cloud Platform study materials and notes for the Professional Cloud Architect certification.
+> - **Source**: [GCP Tutorials](https://www.in28minutes.com/gcp-bookshelf)
 
 ---
 
