@@ -20,6 +20,10 @@ tags:
 - [[Section_9_Getting_Started_with_Google_Cloud_App_Engine|App Engine]]
 - [[Section_10_Google_Cloud_Kubernetes_Engine_for_Cloud_Architects|GKE]]
 - [[Section_11_Getting_Started_with_Google_Cloud_Functions|Cloud Functions]]
+- [[Section_12_Getting_Started_with_Google_Cloud_Run|Cloud Run]]
+- [[Section_14_Getting_Started_with_Cloud_KMS|KMS]]
+- [[Section_15_Exploring_Block_and_File_Storage|Block and File Storage]]
+- [[Section_16_Exploring_Object_Storage|Object Storage]]
 
 ---
 
@@ -32,4 +36,8 @@ tags:
 - [x] Section 8: Managed Services
 - [x] Section 9: App Engine
 - [x] Section 10: GKE
-- [ ] Section 11: Cloud Functions
+- [x] Section 11: Cloud Functions
+- [x] Section 12: Cloud Run
+- [x] Section 14: KMS
+- [x] Section 15: Block and File Storage
+- [ ] Section 16: Object Storage

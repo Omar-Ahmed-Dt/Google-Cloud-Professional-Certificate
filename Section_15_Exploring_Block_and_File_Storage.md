@@ -5,13 +5,13 @@ tags:
 ---
 # GCP Storage
 Google Cloud offers three main types of data storage: **block, file, and object storage.**
-1. **Block storage** = a hard disk attached to one computer
+1. **Block Storage** = a hard disk attached to one computer
 	- Two popular types of **block storage** can be attached to VM instances:
-		- **Local SSDs**
 		- **Persistent Disks**
+		- **Local SSDs**
 		
-2. **File storage** = A shared filesystem accessible by multiple machines, Like a company shared network folder.
-3. **Stores files** = as objects inside buckets, Like Google Drive or Amazon S3.
+2. **File Storage** = A shared filesystem accessible by multiple machines, Like a company shared network folder. [[#Filestore]]
+3. **Object Storage** = as objects inside buckets, Like Amazon S3. [[Section_16_Exploring_Object_Storage|Objectstorage]]
 
 ---
 
