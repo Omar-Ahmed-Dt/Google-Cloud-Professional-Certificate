@@ -240,3 +240,10 @@ You:
 | Regulatory compliance: Object should not modified for 2 years | Configure and lock data retention policy |
 
 ---
+
+## Topics Related to Object Storage
+- [[Section_17_Authentication_with_Cloud_IAM#ACL (Access Control Lists)|ACL]]
+- [[Section_17_Authentication_with_Cloud_IAM#Cloud Storage – Signed URL|Signed URL]]
+- [[Section_17_Authentication_with_Cloud_IAM#Cloud Storage – Static Website|Static Website]]
+
+---
