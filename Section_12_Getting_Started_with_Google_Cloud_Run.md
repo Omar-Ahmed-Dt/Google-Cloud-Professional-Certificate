@@ -2,7 +2,7 @@
 tags:
   - gcp
 ---
-# Cloud Run - Serverless
+## Cloud Run - Serverless Overview
 - Cloud Run is a fully managed application platform for running your code, function, or container on top of Google's highly scalable infrastructure.
 - You can deploy code written in any programming language on Cloud Run **if you can build a container image from it. In fact, building container images is optional. If you're using Go, Node.js, Python, Java, .NET, Ruby, or a supported framework you can use the source-based deployment option** that builds the container for you, using the best practices for the language you're using.
 - You give it a container image. Google runs it, scales it, and exposes it over HTTPS.

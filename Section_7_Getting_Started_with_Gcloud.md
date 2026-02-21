@@ -2,7 +2,7 @@
 tags:
   - gcp
 ---
-# Gcloud
+## Gcloud Overview
 - gcloud is the primary command-line interface (CLI) tool for Google Cloud Platform (GCP). for managing cloud resources without having to click through the web console. 
 - The gcloud tool is part of the Google Cloud SDK and handles the heavy lifting for most GCP services: Compute, Containers, Storage, Network
 
@@ -32,7 +32,7 @@ gcloud compute networks list
 gcloud compute firewall-rules list
 ```
 
-# Cloud Shell
+## Cloud Shell
 - Important things you need to know about Cloud Shell:
 	- Cloud Shell is backed by a VM instance (automatically provisioned by Google Cloud when you launch Cloud Shell)
 	- 5 GB of free persistent disk storage is provided as your `$HOME` directory

@@ -3,7 +3,7 @@ tags:
   - gcp
   - storage
 ---
-# Cloud Storage
+## Cloud Storage Overview
 - Cloud Storage is a service for storing your objects in Google Cloud. An object is an immutable piece of data consisting of a file of any format. You store objects in containers called buckets, and you can optionally organize objects stored in buckets by using folders.
 - All buckets are associated with a project, and you can group your projects under an organization. Each project, bucket, managed folder, and object in Google Cloud is a resource in Google Cloud, as are things such as Compute Engine instances.
 - After you create a project, you can create Cloud Storage buckets, upload objects to your buckets, and download objects from your buckets. You can also grant permissions to make your data accessible to principals you specify or accessible to everyone on the public internet. 
@@ -167,8 +167,7 @@ Retention Lock makes the policy permanent.
 ---
 
 ## Transferring data from on premises to cloud
-- Most migrations move data into: 👉 Google Cloud Storage (GCS)
-	- because it is: cheap, scalable, durable, entry point for analytics & AI
+- Most migrations move data into Google Cloud Storage (GCS) because it is cheap, scalable, durable, entry point for analytics & AI
 
 ### 🧭 There are THREE main transfer approaches
 ```text

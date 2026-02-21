@@ -2,7 +2,7 @@
 tags:
   - gcp
 ---
-# Google Kubernetes Engine (GKE) - GKE
+## Google Kubernetes Engine (GKE) - GKE Overview
 GKE has two main modes:
 - **Standard**
 	- Google manages: **Control plane (master nodes) , Kubernetes API**

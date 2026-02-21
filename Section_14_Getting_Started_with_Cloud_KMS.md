@@ -2,7 +2,7 @@
 tags:
   - gcp
 ---
-# Cloud Key Management Service (KMS)
+## Cloud Key Management Service (KMS) Overview
 - KMS centralizes creation, storage, rotation, and access control of encryption keys used to protect sensitive data across your GCP infrastructure and applications.
 
 ---

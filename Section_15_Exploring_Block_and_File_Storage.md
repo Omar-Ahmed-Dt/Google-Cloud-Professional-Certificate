@@ -3,7 +3,7 @@ tags:
   - gcp
   - storage
 ---
-# GCP Storage
+## GCP Storage Overview
 Google Cloud offers three main types of data storage: **block, file, and object storage.**
 1. **Block Storage** = a hard disk attached to one computer
 	- Two popular types of **block storage** can be attached to VM instances:

@@ -2,7 +2,7 @@
 tags:
   - gcp
 ---
-# Cloud Functions
+## Cloud Functions Overview
 - Imagine you want to **execute some code when an event happens?**
     - A file is uploaded in Cloud Storage  
     - An error log is written to Cloud Logging  
