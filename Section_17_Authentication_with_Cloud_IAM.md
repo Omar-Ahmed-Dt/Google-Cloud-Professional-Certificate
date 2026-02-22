@@ -111,7 +111,59 @@ You CANNOT assign Service Account directly to an On Prem App, **The Solution:**
 4. Use Google Cloud Client Libraries (ADC): ADC uses the service account key file if env var `GOOGLE_APPLICATION_CREDENTIALS` exists. 
 
 - This allows external apps to authenticate as the service account.
-- **long-lived & risky**
+- NOT Recommended to use it - Use SA Keys only for use-cases which cannot use a more secure alternative.
+- **Long-lived & Risky**
+
+### Service Account Impersonation
+- Service Account Impersonation allows a user or another service account to generate short-lived credentials and perform actions as a target service account, based on IAM permissions.
+- Borrow the identity of a service account temporarily instead of sharing credentials.
+- Problem It Solves - Old way (❌ insecure): Create service account key JSON , Download key - anyone have a SA key can act as a service account without any `gcloud auth`
+- No keys created, Access granted via IAM, Credentials are temporary tokens
+- default service account impersonation lifetime in GCP is: **1 hour (3600 seconds)**
+
+```text
+User / VM / CI/CD Identity
+        │
+        │ (has permission: iam.serviceAccountTokenCreator)
+        ▼
+Impersonate Service Account
+        │
+        ▼
+Temporary Access Token (short-lived)
+        │
+        ▼
+Access GCP resources AS that service account
+
+```
+
+#### Step by Step:
+-  Admin grants impersonation permission
+	```bash
+			gcloud iam service-accounts add-iam-policy-binding SA_EMAIL \
+			  --member="user:USER_EMAIL" \
+			  --role="roles/iam.serviceAccountTokenCreator"
+  
+	    	  # Example 
+			  gcloud iam service-accounts add-iam-policy-binding \
+				deploy-sa@my-project.iam.gserviceaccount.com \
+				  --member="user:omar@gmail.com" \
+				  --role="roles/iam.serviceAccountTokenCreator"
+				  # Omar can now impersonate deploy-sa.
+	```
+	- `SA_EMAIL` → service account email, `USER_EMAIL` → human user email
+	- This command allows a user to impersonate a service account.
+
+-  User authenticates locally and Run commands using impersonation
+	```bash
+		gcloud auth login
+		gcloud COMMAND \
+		  --impersonate-service-account=SA_EMAIL
+		
+		# Example 
+		gcloud compute instances list \
+		  --impersonate-service-account=deploy-sa@my-project.iam.gserviceaccount.com
+		  # The command runs with the permissions of the service account, not your user.
+	```
 
 ---
 
@@ -129,52 +181,6 @@ You CANNOT assign Service Account directly to an On Prem App, **The Solution:**
 | Application on a VM wants to put a message on a Pub/Sub Topic | Configure the VM to use a Service Account with right permissions |
 | Is Service Account an identity or a resource? | It is both. You can attach roles with Service Account (identity). You can let other members access a SA by granting them a role on the Service Account (resource). |
 | VM instance with default service account in Project A needs to access Cloud Storage bucket in Project B | In project B, add the service account from Project A and assign **Storage Object Viewer** permission on the bucket |
-
----
-
-## ACL (Access Control Lists)
-- **ACL**: Define **who** has access to your buckets and objects, as well as **what level of access** they have.
-
-**How is this different from IAM?**
-- IAM permissions apply to **all objects within a bucket**.
-- ACLs can be used to **customize specific access** to different objects.
-- A user gets access if they are allowed by **either IAM or ACL**!
-
-**✅ Remember**
-- Use **IAM** for **common permissions** to all objects in a bucket.
-- Use **ACLs** if you need to **customize access to individual objects**.
-
-### Access Control – Overview
-- How do you control access to objects in a Cloud Storage bucket?
-- Two types of access controls:
-    - **Uniform (Recommended)**, Uniform bucket-level access using IAM.
-    - **Fine-grained**, Use IAM and ACLs to control access: Both bucket-level and individual object-level permissions.
-
-- Use **Uniform access** when all users have the same level of access across all objects in a bucket.
-- **Fine-grained access** with ACLs can be used when you need to customize access at an object level.
-
----
-
-## Cloud Storage – Signed URL
-- You would want to **allow a user limited time access** to your objects: Users do **NOT** need Google accounts
-- Use **Signed URL** functionality, A URL that gives **permissions for limited time duration** to perform specific actions
-- **To create a Signed URL:**
-    1. Create a key (`YOUR_KEY`) for the Service Account/User with the desired permissions
-    2. Create Signed URL with the key:
-	
-```bash
-gsutil signurl -d 10m YOUR_KEY gs://BUCKET_NAME/OBJECT_PATH
-```
-
----
-
-## Cloud Storage – Static Website
-1. **Create a bucket with the same name as the website name**
-	- **The bucket name should match the DNS name of the website**
-	- Verify that the domain is owned by you
-	
-2. **Copy the files to the bucket**: Add `index.html` and `error.html` files for a better user experience
-3. **Add member `allUsers` and grant `Storage Object Viewer` role**: This allows public read access to website files
 
 ---
 

@@ -129,6 +129,11 @@ CREATE TABLE users (
 | Database for storing huge volumes stream data from IoT devices | Bigtable |
 | Database for storing huge streams of time series data | Bigtable |
 
+### High Availability
+**Failover**: If Primary Instance is unresponsive, cloud SQL automatically switches to serving data from the standby one.
+**Post Failover**: When the failed instance recovers, it becomes the standby instance. 
+**Failback process**: If you want to reroute traffic back to the original instance initiate
+
 ---
 
 ## Cloud SQL - (Relational Database for Transactional Applications)
@@ -148,7 +153,77 @@ CREATE TABLE users (
     - You need a **Global (distributed across multiple regions)** database **OR**
     - You need higher availability (**99.999%**)
 
+- Cloud SQL instances can be accessed using networking models:
+	1. **Public IP**:
+		- Connectivity happens through the internet.
+		- You must authorize specific client IP addresses through Authorized Networks
+		- Enforcing SSL/TLS encryption for all public connections - by default the traffic is not encrypted
+			- **SSL / TLS Encryption:**
+				- end to end encryption for data **in transit**
+				- Two modes: **One Way TLS** OR **Mutual TLS**
+					1. **One-Way TLS** (also called Server Authentication TLS) means:
+						- Only the server proves its identity to the client using a certificate - The client does NOT present a certificate. So **authentication happens in one direction only.**
+						- Cloud SQL provides:
+							- Server CA certificate
+							- You download `server-ca.pem`
+							- Client uses it to verify Cloud SQL  - `If valid` → continue then open Encrypted tunnel between client and Cloud SQL ,Then when you login to Cloud SQL, it asks you for a username and password,  `If not` → connection rejected
+							
+					2. **Mutual TLS** - The server verifies the client and The client verifies the server - Authentication happens **in both directions.**
+						- **How Mutual TLS Works (Step-by-Step)**
+							- Client starts connection: Client application connects to Cloud SQL - `Client APP → Cloud SQL`
+							- Server sends its certificate: `server-ca.pem - Used to verify Cloud SQL` then Client verifies: "This is the real Cloud SQL server."
+							- Client sends its certificate: `client-cert.pem - Client identity certificate` AND `client-key.pem - Client private key (secret)`
+							- Now the server verifies the client identity.
+							- Both sides validate certificates
+							- Encrypted tunnel established: TLS handshake finishes - Encrypted Tunnel Established
+							- All database traffic is now: Encrypted , Server authenticated , Client authenticated 
 
+	2. **Private IP (via Private Service Access – PSA)**
+		- Private Service Access is **not designed only for Cloud SQL**, but is used by many Google managed services (Cloud SQL, Memorystore, Filestore, etc.).
+	    - It creates a **private connection between your VPC network and Google-managed services VPCs** using internal IP ranges.
+	    - Private Service Access enables private communication between: **Your VPC** and  **Google Managed VPC (service producer network)**
+	    - **Networking Flow:**
+				1. From your VPC, you **enable Private Service Access**.
+				2. You **allocate a private IP range** for Google services `Example: 10.240.0.0/16`
+				3. Google creates or uses a **Google-managed VPC (service producer VPC)** in its own project and reserves a **subnet from the allocated range** Example: `Allocated range 10.240.0.0/16 , Service subnet 10.240.0.0/24`
+				4. This subnet is used internally by the managed service (e.g., Cloud SQL instance).
+				5. Each Google managed service may consume a portion of the allocated PSA range.
+				6. Google establishes **VPC Network Peering** between: `Your VPC (consumer network) and Google managed VPC (producer network)`
+				7. This peering enables **private connectivity** between resources without using the public internet.
+
+	3. Recommended - **Cloud SQL Auth Proxy**
+		-  Cloud SQL Auth Proxy is a secure connection mechanism that allows applications to connect to Cloud SQL **without managing SSL certificates or exposing the database to public networks.**
+		- Handles automatically the lifecycle and management of SSL/TLS certificates
+		    - Generates and rotates **ephemeral certificates** automatically
+		    - No manual certificate download or renewal required
+		
+		- No need to configure Authorized Networks
+		    - Database does not need public IP allowlists
+		    - Access is controlled using IAM authentication
+			
+		- **Connection Flow:**
+			1. Client application connects locally to the proxy , App → localhost:3306
+			2. Proxy authenticates using Google IAM, Uses service account or user credentials, Requires roles: `roles/cloudsql.client` , `roles/cloudsql.instanceUser`
+			3. Proxy requests an OAuth2 token from Google IAM API
+			4. Proxy requests an ephemeral SSL certificate from Cloud SQL Admin API, Certificates are short-lived and automatically rotated
+			5. Proxy establishes encrypted tunnel to Cloud SQL, Encrypted channel uses port 3307 internally
+			6. Proxy forwards traffic securely to Cloud SQL instance, Proxy Server → SQL Instance (port 3306)
+
+			```text
+					Client Environment:
+					        Client App
+					            ↓ (local connection)
+					        Cloud SQL Auth Proxy Client
+					            ↓ (encrypted TLS tunnel)
+				
+					Google Infrastructure:
+					        Cloud SQL Auth Proxy Server
+					            ↓
+					        Cloud SQL Instance
+		
+					All traffic is encrypted and authenticated using IAM identity.
+			```
+		
 **Gcloud Commands with Cloud SQL**
 ```bash
 # Cloud SQL
@@ -206,6 +281,7 @@ Zone A                    Zone B
 #### Use Read Replicas
 - Offload read workloads: Reporting, Analytics
 - Read replicas **do NOT increase availability**, Used only for read operations
+- Read Replicas can be promoted (Manual promotion procees, then update the connection string in the app to connect the new DB instance) to be a primary instance for read and writes (Regional Disaster Recovery )
 
 #### Backup and Export
 **Backup:** 
