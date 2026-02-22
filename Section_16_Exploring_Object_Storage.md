@@ -36,7 +36,7 @@ Once you upload your objects to Cloud Storage, you have fine-grained control ove
 - **Object Versioning:** When a live version of an object is replaced or deleted, it can be retained as a noncurrent version if you enable Object Versioning.
 - **Bucket IP filtering:** With bucket IP filtering, you can restrict access to a bucket based on the source IP address of the request and secure your data from unauthorized access from specific IP addresses or Virtual Private Cloud (VPC).
 - **Bucket Lock:** Govern how long objects in buckets must be retained by specifying a retention policy.
-- **Prevent Public Access (Default)** A bucket is public only if disabled and IAM permission to **allUsers** exists.
+- **Prevent Public Access (Default)** A bucket is public only if disabled and IAM permission - **Storage Object Viewer** to **allUsers** exists.
 
 ---
 

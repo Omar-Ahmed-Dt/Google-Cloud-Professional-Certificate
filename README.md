@@ -21,6 +21,7 @@
 - [[Section_16_Exploring_Object_Storage|Object Storage]]
 - [[Section_17_Authentication_with_Cloud_IAM|IAM]] 
 - [[Section_18_SQL_Databases|Cloud SQL and Cloud Spanner]] 
+- [[Section_20_NoSQL_Databases|NoSQL]] 
 
 ---
 
@@ -40,3 +41,4 @@
 - [x] Section 16: Object Storage
 - [x] Section 17: IAM
 - [x] Section 18: Cloud SQL and Cloud Spanner
+- [x] Section 20: NoSQL
