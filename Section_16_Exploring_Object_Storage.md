@@ -296,8 +296,7 @@ You:
 ---
 
 ## Cloud Storage – Signed URL
-- You would want to **allow a user limited time access** to your objects: Users do **NOT** need Google accounts
-- Use **Signed URL** functionality, A URL that gives **permissions for limited time duration** to perform specific actions
+- You would want to **allow a user limited time access** to **a specific object** in the bucket, Users do **NOT** need Google accounts
 - **To create a Signed URL:**
     1. Create a key (`YOUR_KEY`) for the Service Account/User with the desired permissions
     2. Create Signed URL with the key:
@@ -308,18 +307,22 @@ gsutil signurl -d 10m YOUR_KEY gs://BUCKET_NAME/OBJECT_PATH
 
 **Example**
 ```bash
+# Create a SA 
 $ gcloud iam service-accounts create signed-url-test-sa
 
+# Give <storage object viewer> permissin to SA
 $ gcloud projects add-iam-policy-binding gcp-professional-2026 \
     --member="serviceAccount:<SA Name>@<Project Name>.iam.gserviceaccount.com" \
     --role="roles/storage.objectViewer"
-	
+
+# Create a key	
 $ gcloud iam service-accounts keys create key.json \
     --iam-account=<SA Name>@<Project Name>.iam.gserviceaccount.com
 	
 $ ls
 key.json  README-cloudshell.txt
 
+# Create signed URL
 $ gsutil signurl -d 10m key.json \
 gs://enkidutestingbucket/17cd40f2545ac328470a039abe848872.jpg
 
