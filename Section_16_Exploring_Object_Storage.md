@@ -184,7 +184,7 @@ Move objects to cheaper storage, Example flow: `Standard → Nearline → Coldli
 
 > **Summary**
 > - **Retention Policy** → defines how long objects must be preserved.
-> - **Retention Lock** → permanently enforces the policy for compliance by preventing modification or removal.
+> - **Bucket Lock** → permanently enforces the policy for compliance by preventing modification or removal.
 
 ### Object Retention Lock
 - retention at the **OBJECT level**, not only the bucket level.
@@ -304,6 +304,26 @@ You:
 	
 ```bash
 gsutil signurl -d 10m YOUR_KEY gs://BUCKET_NAME/OBJECT_PATH
+```
+
+**Example**
+```bash
+$ gcloud iam service-accounts create signed-url-test-sa
+
+$ gcloud projects add-iam-policy-binding gcp-professional-2026 \
+    --member="serviceAccount:<SA Name>@<Project Name>.iam.gserviceaccount.com" \
+    --role="roles/storage.objectViewer"
+	
+$ gcloud iam service-accounts keys create key.json \
+    --iam-account=<SA Name>@<Project Name>.iam.gserviceaccount.com
+	
+$ ls
+key.json  README-cloudshell.txt
+
+$ gsutil signurl -d 10m key.json \
+gs://enkidutestingbucket/17cd40f2545ac328470a039abe848872.jpg
+
+## the URL will show here ...
 ```
 
 ---
