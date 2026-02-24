@@ -19,10 +19,10 @@ tags:
 1. Challenge 1: Your database will go down if the data center crashes:
 	- **You can switch to the standby database**
 	
-2. Challenge 2 (SOLVED): You will lose data if the database crashes: 
+2. Challenge 2: You will lose data if the database crashes: 
 	- **You can setup database from latest snapshot and apply transaction logs**
 
-3. Challenge 3 (SOLVED): Database will be slow when you take snapshots:
+3. Challenge 3: Database will be slow when you take snapshots:
 	- **Take snapshots from standby.**
 	- **Applications connecting to master will get good performance always.**
 

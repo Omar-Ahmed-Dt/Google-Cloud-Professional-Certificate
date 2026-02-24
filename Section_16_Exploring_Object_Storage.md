@@ -287,8 +287,8 @@ You:
 ### Access Control – Overview
 - How do you control access to objects in a Cloud Storage bucket?
 - Two types of access controls:
-    - **Uniform (Recommended)**, Uniform bucket-level access using IAM.
-    - **Fine-grained**, Use IAM and ACLs to control access: Both bucket-level and individual object-level permissions.
+    - **Uniform (Recommended)**, Uniform bucket-level access using **IAM**
+    - **Fine-grained**, Use **IAM and ACLs** to control access **Both bucket-level and individual object-level permissions**
 
 - Use **Uniform access** when all users have the same level of access across all objects in a bucket.
 - **Fine-grained access** with ACLs can be used when you need to customize access at an object level.
