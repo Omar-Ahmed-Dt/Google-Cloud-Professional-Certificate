@@ -3,7 +3,7 @@ tags:
   - gcp
 ---
 ## IAM Overview
-- IAM is a tool to manage fine-grained authorization for Google Cloud. In other words, it lets you control who can do what on which resources.
+- IAM is a tool to manage fine-grained **authorization** (IAM is for Authorization, Authentication is handled by Identity systems) for Google Cloud. In other words, it lets you control who can do what on which resources.
 - Every action in Google Cloud requires certain permissions. When someone tries to perform an action in Google Cloud—for example, create a VM instance or view a dataset—IAM first checks if they have the required permissions. If they don't, then IAM prevents them from performing the action.
 - Giving someone permissions in IAM involves the following three components:
     - **Principal - Member - Identity:** The **identity** of the person or system that you want to give permissions to.
