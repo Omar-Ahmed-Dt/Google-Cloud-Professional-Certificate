@@ -308,8 +308,21 @@ The user must authenticate with Google os IAP uses:
 - Required role: `roles/iap.tunnelResourceAccessor` , This role allows to establish TCP tunnel via **IAP to a specific VM**. `Without this role → tunnel denied.`
 
 **Step 4 - OS Login / Compute Permission Check**
-IAP controls network tunnel, but SSH login requires compute permissions.
-- `roles/compute.instanceAdmin.v1` (or) `roles/compute.osLogin` (preferred secure model)
+
+```text
+User Identity
+      ↓
+IAP Tunnel
+      ↓
+Compute Engine API
+      ↓
+VM Service Account (IMPORTANT)
+      ↓
+OS Login / SSH session
+```
+- GCP needs to impersonate the target VM's service account to establish the tunnel. Without `roles/serviceAccountUser` on that service account, you'll get a permission denied error.
+- IAP controls network tunnel, but SSH login requires compute permissions.
+	- `roles/compute.instanceAdmin.v1` (or) `roles/compute.osLogin` (preferred secure model)
 
 If OS Login is enabled (recommended):
 - SSH access is controlled via IAM
