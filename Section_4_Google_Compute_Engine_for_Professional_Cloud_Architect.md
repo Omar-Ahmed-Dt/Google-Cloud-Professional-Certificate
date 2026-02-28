@@ -1,6 +1,7 @@
 ---
 tags:
   - gcp
+  - compute_engine
 ---
 
 # Compute Engine
