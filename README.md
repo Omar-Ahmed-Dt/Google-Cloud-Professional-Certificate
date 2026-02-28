@@ -4,16 +4,8 @@
 
 This repository contains **Google Cloud Platform (GCP)** study materials and personal notes prepared for the **Professional Cloud Architect Certification**.
 
-**Source:**  
+**Labs:**  
 👉 https://www.in28minutes.com/gcp-bookshelf
-
----
-
-## 🎯 Certification Goal
-
-Prepare for:
-
-**Google Cloud Professional Cloud Architect Certification**
 
 ---
 
