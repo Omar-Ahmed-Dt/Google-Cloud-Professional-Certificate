@@ -1,48 +1,64 @@
-# This repository is for the Google Cloud Professional Certificate.
+# Google Cloud Professional Certificate — Study Repository
 
-> About
-> - This directory contains Google Cloud Platform study materials and notes for the Professional Cloud Architect certification.
-> - **Source**: [GCP Tutorials](https://www.in28minutes.com/gcp-bookshelf)
+## 📘 About
 
----
+This repository contains **Google Cloud Platform (GCP)** study materials and personal notes prepared for the **Professional Cloud Architect Certification**.
 
-## Core Topics
-- [[Section_4_Google_Compute_Engine_for_Professional_Cloud_Architect|Compute Engine Fundamentals]]
-- [[Section_5_Instance_Groups_and_Load_Balancing_for_Professional_Cloud_Architect|Instance Groups & Load Balancing]]
-- [[Section_6_Google_Cloud_Compute_Engine&Load_Balancing_for_Architects|Advanced Compute & LB]]
-- [[Section_7_Getting_Started_with_Gcloud|Getting Started with Gcloud]]
-- [[Section_8_Getting_Started_with_Google_Cloud_Platform_Managed_Services|Managed Services]]
-- [[Section_9_Getting_Started_with_Google_Cloud_App_Engine|App Engine]]
-- [[Section_10_Google_Cloud_Kubernetes_Engine_for_Cloud_Architects|GKE]]
-- [[Section_11_Getting_Started_with_Google_Cloud_Functions|Cloud Functions]]
-- [[Section_12_Getting_Started_with_Google_Cloud_Run|Cloud Run]]
-- [[Section_14_Getting_Started_with_Cloud_KMS|KMS]]
-- [[Section_15_Exploring_Block_and_File_Storage|Block and File Storage]]
-- [[Section_16_Exploring_Object_Storage|Object Storage]]
-- [[Section_17_Authentication_with_Cloud_IAM|IAM]] 
-- [[Section_18_SQL_Databases|Cloud SQL and Cloud Spanner]] 
-- [[Section_20_NoSQL_Databases|NoSQL]]
-- [[Section_21_Creating_Private_Networks_with_Cloud_VPC|VPC]]
-- [[Section_22_Operations|Operations]]
+**Source:**  
+👉 https://www.in28minutes.com/gcp-bookshelf
 
 ---
 
-## Study Progress
+## 🎯 Certification Goal
 
-- [x] Section 4: Compute Engine
-- [x] Section 5: Instance Groups & Load Balancing
-- [x] Section 6: Advanced Compute & Load Balancing
-- [x] Section 7: Cloud Basics
-- [x] Section 8: Managed Services
-- [x] Section 9: App Engine
-- [x] Section 10: GKE
-- [x] Section 11: Cloud Functions
-- [x] Section 12: Cloud Run
-- [x] Section 14: KMS
-- [x] Section 15: Block and File Storage
-- [x] Section 16: Object Storage
-- [x] Section 17: IAM
-- [x] Section 18: Cloud SQL and Cloud Spanner
-- [x] Section 20: NoSQL
-- [x] Section 21: VPC
-- [x] Section 22: Operations
+Prepare for:
+
+**Google Cloud Professional Cloud Architect Certification**
+
+---
+
+## 📚 Core Topics
+
+- [Compute Engine Fundamentals](./Section_4_Google_Compute_Engine_for_Professional_Cloud_Architect.md)
+- [Instance Groups & Load Balancing](./Section_5_Instance_Groups_and_Load_Balancing_for_Professional_Cloud_Architect.md)
+- [Advanced Compute & Load Balancing](./Section_6_Google_Cloud_Compute_Engine&Load_Balancing_for_Architects.md)
+- [Getting Started with Gcloud](./Section_7_Getting_Started_with_Gcloud.md)
+- [Managed Services](./Section_8_Getting_Started_with_Google_Cloud_Platform_Managed_Services.md)
+- [App Engine](./Section_9_Getting_Started_with_Google_Cloud_App_Engine.md)
+- [Google Kubernetes Engine (GKE)](./Section_10_Google_Cloud_Kubernetes_Engine_for_Cloud_Architects.md)
+- [Cloud Functions](./Section_11_Getting_Started_with_Google_Cloud_Functions.md)
+- [Cloud Run](./Section_12_Getting_Started_with_Google_Cloud_Run.md)
+- [Cloud KMS](./Section_14_Getting_Started_with_Cloud_KMS.md)
+- [Block and File Storage](./Section_15_Exploring_Block_and_File_Storage.md)
+- [Object Storage](./Section_16_Exploring_Object_Storage.md)
+- [Authentication with Cloud IAM](./Section_17_Authentication_with_Cloud_IAM.md)
+- [Cloud SQL & Cloud Spanner](./Section_18_SQL_Databases.md)
+- [NoSQL Databases](./Section_20_NoSQL_Databases.md)
+- [Cloud VPC Networking](./Section_21_Creating_Private_Networks_with_Cloud_VPC.md)
+- [Operations & Monitoring](./Section_22_Operations.md)
+
+---
+
+## ✅ Study Progress
+
+| Section                          | Status      |
+| -------------------------------- | ----------- |
+| Compute Engine                   | ✅ Completed |
+| Instance Groups & Load Balancing | ✅ Completed |
+| Advanced Compute & LB            | ✅ Completed |
+| Cloud Basics                     | ✅ Completed |
+| Managed Services                 | ✅ Completed |
+| App Engine                       | ✅ Completed |
+| GKE                              | ✅ Completed |
+| Cloud Functions                  | ✅ Completed |
+| Cloud Run                        | ✅ Completed |
+| KMS                              | ✅ Completed |
+| Block & File Storage             | ✅ Completed |
+| Object Storage                   | ✅ Completed |
+| IAM                              | ✅ Completed |
+| Cloud SQL & Spanner              | ✅ Completed |
+| NoSQL                            | ✅ Completed |
+| VPC                              | ✅ Completed |
+| Operations                       | ✅ Completed |
+
+---
