@@ -21,7 +21,9 @@
 - [[Section_16_Exploring_Object_Storage|Object Storage]]
 - [[Section_17_Authentication_with_Cloud_IAM|IAM]] 
 - [[Section_18_SQL_Databases|Cloud SQL and Cloud Spanner]] 
-- [[Section_20_NoSQL_Databases|NoSQL]] 
+- [[Section_20_NoSQL_Databases|NoSQL]]
+- [[Section_21_Creating_Private_Networks_with_Cloud_VPC|VPC]]
+- [[Section_22_Operations|Operations]]
 
 ---
 
@@ -42,3 +44,5 @@
 - [x] Section 17: IAM
 - [x] Section 18: Cloud SQL and Cloud Spanner
 - [x] Section 20: NoSQL
+- [x] Section 21: VPC
+- [x] Section 22: Operations
