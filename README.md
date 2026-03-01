@@ -28,29 +28,9 @@ This repository contains **Google Cloud Platform (GCP)** study materials and per
 - [NoSQL Databases](./Section_20_NoSQL_Databases.md)
 - [Cloud VPC Networking](./Section_21_Creating_Private_Networks_with_Cloud_VPC.md)
 - [Operations & Monitoring](./Section_22_Operations.md)
-
----
-
-## ✅ Study Progress
-
-| Section                          | Status      |
-| -------------------------------- | ----------- |
-| Compute Engine                   | ✅ Completed |
-| Instance Groups & Load Balancing | ✅ Completed |
-| Advanced Compute & LB            | ✅ Completed |
-| Cloud Basics                     | ✅ Completed |
-| Managed Services                 | ✅ Completed |
-| App Engine                       | ✅ Completed |
-| GKE                              | ✅ Completed |
-| Cloud Functions                  | ✅ Completed |
-| Cloud Run                        | ✅ Completed |
-| KMS                              | ✅ Completed |
-| Block & File Storage             | ✅ Completed |
-| Object Storage                   | ✅ Completed |
-| IAM                              | ✅ Completed |
-| Cloud SQL & Spanner              | ✅ Completed |
-| NoSQL                            | ✅ Completed |
-| VPC                              | ✅ Completed |
-| Operations                       | ✅ Completed |
+- [Exploring IAM , Project and Organization](./Section_23_Exploring_IAM_and_Project_Organization) - Not Completed
+- [SSH and Moving Compute Engine](./Section_24_Quick_Review_Compute_Engine)
+- [Asynchronous Communication](./Section_25_Asynchronous_Communication)
+- [VPN and Interconnect](./Section_26_Implementing_Hybrid_Cloud_VPN_and_Interconnect)
 
 ---
