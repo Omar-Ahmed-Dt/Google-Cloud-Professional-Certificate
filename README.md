@@ -33,5 +33,6 @@ This repository contains **Google Cloud Platform (GCP)** study materials and per
 - [Asynchronous Communication](./Section_25_Asynchronous_Communication.md)
 - [VPN and Interconnect](./Section_26_Implementing_Hybrid_Cloud_VPN_and_Interconnect.md)
 - [BigQuery and Dataproc](./Section_27_Exploring_BigQuery_and_Dataproc.md)
+- [Caching](./Section_29_Caching.md)
 
 ---
