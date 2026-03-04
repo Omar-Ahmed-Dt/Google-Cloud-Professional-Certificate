@@ -34,5 +34,7 @@ This repository contains **Google Cloud Platform (GCP)** study materials and per
 - [VPN and Interconnect](./Section_26_Implementing_Hybrid_Cloud_VPN_and_Interconnect.md)
 - [BigQuery and Dataproc](./Section_27_Exploring_BigQuery_and_Dataproc.md)
 - [Caching](./Section_29_Caching.md)
+- [Data Lifecycle and Data Architecture](./Section_28_Exploring_Data_Lifecycle_and_Data_Architectures.md)
+- [SDLC](./Section_30_Agile_DevOps_SRE_and_SDLC_Evolution.md)
 
 ---
