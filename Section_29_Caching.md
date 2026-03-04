@@ -39,6 +39,8 @@ tags:
 - Cloud Functions
 - App Engine flexible and standard
 
+---
+
 > [!Note]
 > **App Engine memcache service** 
 > - legacy caching service in GCP
@@ -62,7 +64,7 @@ tags:
 		- Routes traffic
 		- Connects to CDN cache layer
 
-- The more frequently data changes → the lower the TTL is recommended
+- **The more frequently data changes → the lower the TTL is recommended**
 	- Max age for Static content: 72 hours and for Dynamic content: 5 minutes 
 
 ### Cache Key
