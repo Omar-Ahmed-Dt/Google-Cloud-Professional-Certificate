@@ -36,5 +36,7 @@ This repository contains **Google Cloud Platform (GCP)** study materials and per
 - [Caching](./Section_29_Caching.md)
 - [Data Lifecycle and Data Architecture](./Section_28_Exploring_Data_Lifecycle_and_Data_Architectures.md)
 - [SDLC](./Section_30_Agile_DevOps_SRE_and_SDLC_Evolution.md)
+- [Exploring Cloud Architecture Responsibilities](./Section_34_Exploring_Cloud_Architect_Responsibilities.md)
+- [Exploring More](./Section_35_Exploring_More_Google_Cloud_Platform.md)
 
 ---
